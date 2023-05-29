@@ -10,15 +10,16 @@
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
+
 #define NULL_STRING "(null)"
 
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
-#define CONVERT_LOWERCASE  1
-#define CONVERT_UNIGNED  2
+#define CONVERT_LOWERCASE	1
+#define CONVERT_UNSIGNED	2
 
 /**
- * stryct parameters - parameters struct
+ * struct parameters - parameters struct
  *
  * @unsign: flag if unsigned value
  *
@@ -33,22 +34,23 @@
  *
  * @h_modifier: on if h_modifier is specified
  * @l_modifier: on if l_modifier is specified
+ *
  */
 typedef struct parameters
 {
-	unsigned int unsign : 1;
+	unsigned int unsign			: 1;
 
-	unsigned int plus_flag : 1;
-	unsigned int space_flag : 1;
-	unsigned int hashtag_flag : 1;
-	unsigned int zero_flag : 1;
-	unsigned int minus_flag : 1;
+	unsigned int plus_flag		: 1;
+	unsigned int space_flag		: 1;
+	unsigned int hashtag_flag	: 1;
+	unsigned int zero_flag		: 1;
+	unsigned int minus_flag		: 1;
 
 	unsigned int width;
 	unsigned int precision;
 
-	unsigned int h_modifier : 1;
-	unsigned int l_modifier : 1;
+	unsigned int h_modifier		: 1;
+	unsigned int l_modifier		: 1;
 } params_t;
 
 /**
@@ -107,10 +109,11 @@ int print_number_left_shift(char *str, params_t *params);
 /* params.c module */
 void init_params(params_t *params, va_list ap);
 
-/* string_fields.c module */
+/* string_fields.c modoule */
 char *get_precision(char *p, params_t *params, va_list ap);
 
 /* _prinf.c module */
 int _printf(const char *format, ...);
 
 #endif
+

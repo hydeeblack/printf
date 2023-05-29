@@ -69,20 +69,20 @@ int get_flag(char *s, params_t *params)
 	switch (*s)
 	{
 		case '+':
-			i = params -> plus_flag = 1;
+			i = params->plus_flag = 1;
 			break;
 		case ' ':
-                        i = params -> space_flag = 1;
-                        break;	
+			i = params->space_flag = 1;
+			break;
 		case '#':
-                        i = params -> hashtag_flag = 1;
-                        break;
+			i = params->hashtag_flag = 1;
+			break;
 		case '-':
-                        i = params -> minus_flag = 1;
-                        break;
+			i = params->minus_flag = 1;
+			break;
 		case '0':
-                        i = params -> zero_flag = 1;
-                        break;
+			i = params->zero_flag = 1;
+			break;
 	}
 	return (i);
 }
@@ -101,11 +101,11 @@ int get_modifier(char *s, params_t *params)
 	switch (*s)
 	{
 	case 'h':
-		i = params -> h_modifier = 1;
+		i = params->h_modifier = 1;
 		break;
 	case 'l':
-                i = params -> l_modifier = 1;
-                break;
+		i = params->l_modifier = 1;
+		break;
 	}
 	return (i);
 }
@@ -113,7 +113,7 @@ int get_modifier(char *s, params_t *params)
 /**
  * get_width - gets the width from the format string
  * @s: the format string
- * @params: the parameter struct
+ * @params: the parameters struct
  * @ap: the argument pointer
  *
  * Return: new pointer
@@ -132,6 +132,6 @@ char *get_width(char *s, params_t *params, va_list ap)
 		while (_isdigit(*s))
 			d = d * 10 + (*s++ - '0');
 	}
-	params -> width = d;
+	params->width = d;
 	return (s);
 }
